@@ -2,7 +2,12 @@ package main
 
 import "fmt"
 
+const (
+	first = iota
+	second
+	third
+)
+
 func main() {
-	const pi = 3.14159
-	fmt.Println(pi)
+	fmt.Println(first, second, third)
 }
