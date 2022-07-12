@@ -3,5 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hallo Gophers!")
+	var i int
+	i = 42
+	fmt.Println(i)
+
+	var f float32 = 3.14
+	fmt.Println(f)
+
+	firstName := "Harald"
+	fmt.Println(firstName)
 }
