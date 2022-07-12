@@ -3,7 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	var firstName *string = new(string)
-	*firstName = "Harald"
-	fmt.Print(*firstName)
+	firstName := "Harald"
+	fmt.Println(firstName)
+
+	ptr := &firstName
+	fmt.Println(ptr, *ptr)
+
+	firstName = "Tanja"
+	fmt.Println(ptr, *ptr)
 }
