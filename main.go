@@ -3,16 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	m := map[string]int{"foo": 42}
+	type user struct {
+		ID        int
+		FirstName string
+		LastName  string
+	}
+	var u user
+	u.ID = 1
+	u.FirstName = "Harald"
+	u.LastName = "Wilbertz"
+	fmt.Println(u)
+	fmt.Println(u.FirstName)
 
-	fmt.Println(m)
-	fmt.Println(m["foo"])
-
-	m["foo"] = 27
-
-	fmt.Println(m)
-	fmt.Println(m["foo"])
-
-	delete(m, "foo")
-	fmt.Println(m)
+	u2 := user{ID: 1, FirstName: "Arthur", LastName: "Dent"}
+	fmt.Println(u2)
 }
