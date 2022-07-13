@@ -3,11 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	slice := []int{1, 2, 3}
-	fmt.Println(slice)
+	m := map[string]int{"foo": 42}
 
-	slice = append(slice, 4, 42, 27)
-	fmt.Println(slice)
-	slice2 := slice[1:]
-	fmt.Println(slice2)
+	fmt.Println(m)
+	fmt.Println(m["foo"])
+
+	m["foo"] = 27
+
+	fmt.Println(m)
+	fmt.Println(m["foo"])
+
+	delete(m, "foo")
+	fmt.Println(m)
 }
