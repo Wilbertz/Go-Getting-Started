@@ -13,12 +13,15 @@ func main() {
 	//fmt.Println("Hello Playground")
 
 	port := 3000
-	startWebServer(port, 2)
+	_, err := startWebServer(port, 2)
+	fmt.Println(err)
 }
 
-func startWebServer(port int, numberOfRetries int) {
+func startWebServer(port int, numberOfRetries int) (int, error) {
 	fmt.Println("Starting server...")
 	// Do something
 	fmt.Println("Server started on port", port)
 	fmt.Println("Number of retries", numberOfRetries)
+
+	return port, nil
 }
