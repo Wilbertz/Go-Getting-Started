@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"Go-Getting-Started/models"
 	"net/http"
 	"regexp"
 )
@@ -17,4 +18,15 @@ func newUserController() *userController {
 	return &userController{
 		userIDPattern: regexp.MustCompile(`^/users/(\d+)`),
 	}
+}
+
+func (uc *userController) delete(id int, w http.ResponseWriter) {
+	err := models.RemoveUserById(id)
+
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
+		return
+	}
+	w.WriteHeader(http.StatusOK)
 }
